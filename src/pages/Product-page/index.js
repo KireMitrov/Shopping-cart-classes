@@ -9,6 +9,9 @@ class ProductPage extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            imageUrl: ""
+        }
 
         this.changeAttribute = this.changeAttribute.bind(this)
     }
@@ -22,13 +25,13 @@ class ProductPage extends React.Component {
 
     render() {
 
-        const { product, currency, currencyToAmount, addToCart, imageUrl, setImageUrl, setProduct } = this.context;
+        const { product, currency, currencyToAmount, addToCart, setProduct } = this.context;
 
 
         return (
             <div className="product-container">
                 <div className="product">
-                    <img src={imageUrl === "" ? product.gallery[0] : imageUrl} alt={product.name}></img>
+                    <img src={this.state.imageUrl === "" ? product.gallery[0] : this.state.imageUrl} alt={product.name}></img>
                 </div>
                 <div className="product-description">
                     <div className="product-brand">{product.brand}</div>
@@ -75,7 +78,7 @@ class ProductPage extends React.Component {
                     {product.gallery.map((url, index) => (
                         <img src={url}
                             onClick={() => {
-                                setImageUrl(url);
+                                this.setState({imageUrl: url});
                             }}
                             key={index}></img>
                     ))}

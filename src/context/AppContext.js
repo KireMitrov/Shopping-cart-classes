@@ -10,7 +10,6 @@ class AppProvider extends React.Component {
         currency: "$",
         product: "",
         cartItems: [],
-        imageUrl: "",
         totalItems: 0,
         totalPrice: 0,
 
@@ -32,9 +31,6 @@ class AppProvider extends React.Component {
         this.setState({ product: product })
     }
 
-    setImageUrl = (url) => {
-        this.setState({ imageUrl: url })
-    }
 
 
     addToCart = (product) => {
