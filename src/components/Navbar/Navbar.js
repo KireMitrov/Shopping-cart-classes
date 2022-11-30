@@ -4,7 +4,7 @@ import AppContext from "../../context/AppContext";
 import { PRODUCTS_QUERY, CURRENCY_QUERY } from "../../queries/queries";
 import { Query } from "@apollo/client/react/components";
 import CartOverlay from "../Cart Overlay/CartOverlay";
-
+import "./Navbar.css"
 
 class Navbar extends React.Component {
 

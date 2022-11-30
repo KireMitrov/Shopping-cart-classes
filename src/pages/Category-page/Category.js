@@ -3,7 +3,7 @@ import ProductCard from "../../components/Product card/ProductCard";
 import AppContext from "../../context/AppContext";
 import { Query } from "@apollo/client/react/components"
 import { PRODUCTS_QUERY } from "../../queries/queries";
-
+import "./Category.css"
 
 class Category extends React.Component {
 

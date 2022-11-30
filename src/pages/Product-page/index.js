@@ -1,6 +1,6 @@
 import React from "react";
 import AppContext from "../../context/AppContext";
-
+import "./ProductPage.css"
 
 
 class ProductPage extends React.Component {

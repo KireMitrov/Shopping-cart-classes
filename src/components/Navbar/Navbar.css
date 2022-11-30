@@ -1,0 +1,133 @@
+.header {
+    position: absolute;
+    width: 1440px;
+    height: 80px;
+    left: 0px;
+    top: 0px;
+  }
+  
+  .logo {
+    position: absolute;
+    width: 41px;
+    height: 41px;
+    left: 699px;
+    top: calc(50% - 41px/2 + 4.5px);
+  }
+  
+  .navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    justify-content: space-around;
+    position: absolute;
+    width: 234px;
+    height: 56px;
+    left: 101px;
+    bottom: 0px;
+  }
+  
+  .navigation a:hover {
+    border-bottom: 2px solid #5ECE7B;
+  }
+  
+  .label {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+  
+  .navigation a:hover .label {
+    color: #5ECE7B;
+  }
+  
+  .label-active {
+    color: #5ECE7B;
+  }
+  
+  .tab-active {
+    border-bottom: 2px solid #5ECE7B;
+  }
+  
+  .actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px;
+    gap: 22px;
+    position: absolute;
+    width: 204px;
+    height: 40px;
+    right: 101px;
+    top: 23px;
+  }
+  
+  .currency {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  
+  .currency-sign {
+    height: 29px;
+    line-height: 28.8px;
+    margin-top: -1;
+    min-width: 12px;
+    white-space: nowrap;
+    font-family: "Raleway-Light";
+    font-size: 18px;
+    font-weight: 300;
+    cursor: pointer;
+  }
+  
+  .currencySelector {
+    width: 114px;
+    height: auto;
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+    position: absolute;
+    left: 1248px;
+    top: 65px;
+    cursor: pointer;
+  }
+  
+  .currencyDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px 10px 20px;
+    font-weight: 600;
+  }
+  
+  .currencyDiv:hover {
+    background-color: #EEEEEE;
+  }
+  
+  .currency img {
+    align-self: center;
+    height: 4px;
+    margin-left: 10px;
+    margin-top: 6px;
+    width: 7px;
+  }
+  
+  .cart-items-notification {
+    background-color: #1d1f22;
+    color: #fff;
+    border-radius: 60px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0px;
+    right: -12px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart-icon {
+    width: 20px;
+    height: 20px;
+  }
+  

@@ -1,0 +1,117 @@
+.title-cart-position {
+    margin: 160px 0 0 101px;
+  }
+  
+  .title-cart {
+    font-size: 32px;
+    font-weight: 700;
+    height: 68px;
+    text-transform: uppercase;
+  }
+  
+  .cart-line {
+    width: 1240px;
+    height: 1px;
+    background: #E5E5E5;
+    margin: 16px 101px 0;
+  }
+  
+  .cart-line-container {
+    width: 1240px;
+    height: 1px;
+    background: #E5E5E5;
+    margin: 16px 0;
+  }
+  
+  .cart-item-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+    width: 1240px;
+    flex-wrap: wrap;
+  }
+  
+  .cart-brand-title-price {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .cart-attributes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 16px;
+    cursor: pointer;
+  }
+  
+  .cart-items-right {
+    display: flex;
+    flex-direction: row;
+    margin: 24px 0 0 0;
+    gap: 24px
+  }
+  
+  .cart-quantity-selector {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .cart-item-quantity {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cart-img {
+    width: 200px;
+    height: 288px;
+  }
+  
+  .cart-minus-plus-squares {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #1d1f22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    cursor: pointer;
+  }
+  
+  .cart-order-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 32px;
+    width: 279px;
+    height: 43px;
+    margin: 10px 0 32px 0;
+    background-color: #5ECE7B;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+  }
+  
+  .cart-order-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 101px;
+    gap: 8px;
+    font-size: 24px;
+  }
+  
+  .cart-remove-btn{
+    font-size: 32px;
+    cursor: pointer;
+    position: relative;
+    right: -22px;
+    top:-32px;
+    color:red;
+    width: 45px;
+    height: 45px;
+  }

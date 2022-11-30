@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AppContext from "../../context/AppContext";
-
+import "./CartOverlay.css"
 
 class CartOverlay extends React.Component {
 

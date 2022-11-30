@@ -1,5 +1,7 @@
 import React from "react";
 import AppContext from "../../context/AppContext";
+import './Cart.css'
+
 
 class Cart extends React.Component {
     
