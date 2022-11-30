@@ -37,7 +37,7 @@ class Cart extends React.Component {
                                                 {attribute.items.map((value) => (
                                                     <div className={`attributes-rectangle ${ item.addedAttributes[index].defaultValue === value.value ? "atributes-selected" : ""}`}
                                                      key={value.value}
-                                                     onClick={()=> handleTextAttributeChange(value.value, item.name, attribute.name)}>{value.value}</div>
+                                                     onClick={()=> handleTextAttributeChange(item, attribute.name, value.value)}>{value.value}</div>
                                                 ))}
                                             </div>
                                         </div>
@@ -48,7 +48,7 @@ class Cart extends React.Component {
                                                 <div className={`attributes-rectangle-color ${ item.addedAttributes[index].defaultValue === value.value ? "cart-attributes-color-selected" : ""}`} 
                                                 style={{ backgroundColor: `${value.value}` }} 
                                                 key={value.value}
-                                                onClick={()=> handleTextAttributeChange(value.value, item.name, attribute.name)}></div>
+                                                onClick={()=> handleTextAttributeChange(item, attribute.name, value.value)}></div>
                                             ))}
                                         </div>
                                     </div>

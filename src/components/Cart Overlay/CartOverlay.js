@@ -11,7 +11,7 @@ class CartOverlay extends React.Component {
     render() {
 
         const { currency, cartItems, currencyToAmount, handleDecrement, handleTextAttributeChange, handleIncrement, removeFromCart, setCartIsOpen, totalItems, calculateTotal } = this.context
-        console.log(calculateTotal())
+        
         return (
             <div className="cart-overlay" >
                 <div className="cart-overlay-products-container">
@@ -34,7 +34,7 @@ class CartOverlay extends React.Component {
                                                         <div 
                                                         className={`cart-overlay-attributes-rectangle ${ item.addedAttributes[index].defaultValue === value.value ? "atributes-selected" : ""}`} 
                                                         key={value.value} 
-                                                        onClick={()=> handleTextAttributeChange(value.value, item.name, attribute.name)}>{value.value}</div>
+                                                        onClick={()=> handleTextAttributeChange(item, attribute.name, value.value)}>{value.value}</div>
                                                     ))}
                                                 </div>
                                             </div>
@@ -45,7 +45,7 @@ class CartOverlay extends React.Component {
                                                     <div className={`cart-overlay-attributes-rectangle-color ${ item.addedAttributes[index].defaultValue === value.value ? "cart-overlay-color-selected" : ""}`} 
                                                     style={{ backgroundColor: `${value.value}` }} 
                                                     key={value.value}
-                                                    onClick={()=> handleTextAttributeChange(value.value, item.name, attribute.name)}></div>
+                                                    onClick={()=> handleTextAttributeChange(item, attribute.name, value.value)}></div>
                                                 ))}
                                             </div>
                                         </div>

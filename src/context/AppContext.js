@@ -85,15 +85,12 @@ class AppProvider extends React.Component {
 
     // Handling attribute change
 
-    handleTextAttributeChange = (value, name, attribute) => {
-        let changedItem = this.state.cartItems.find((item) => item.name === name);
-        if (changedItem) {
-            let attributeToChange = changedItem.addedAttributes.findIndex((att) => att.name === attribute);
-            changedItem.addedAttributes[attributeToChange]["defaultValue"] = value;
+    handleTextAttributeChange = (product, attribute, value) => {
+
+            let attributeToChange = product.addedAttributes.findIndex((att) => att.name === attribute);
+            product.addedAttributes[attributeToChange]["defaultValue"] = value;
             this.setState({ cartItems: this.state.cartItems });
-        } else {
-            console.log('hi')
-        }
+
     }
 
 
