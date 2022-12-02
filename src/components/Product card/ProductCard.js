@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 import AppContext from "../../context/AppContext";
 import "./ProductCard.css";
 

@@ -16,6 +16,7 @@ class ProductPage extends React.Component {
         this.changeAttribute = this.changeAttribute.bind(this)
     }
 
+
     changeAttribute(product, attribute, value, setProduct) {
         let attributeToChange = product.addedAttributes.findIndex((att) => att.name === attribute);
         product.addedAttributes[attributeToChange]["defaultValue"] = value;
@@ -26,8 +27,7 @@ class ProductPage extends React.Component {
     render() {
 
         const { product, currency, currencyToAmount, addToCart, setProduct } = this.context;
-
-
+        console.log(this.props)
         return (
             <div className="product-container">
                 <div className="product">
