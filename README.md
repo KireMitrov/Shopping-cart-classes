@@ -1,4 +1,4 @@
-## Capstone Project/ Library  Page clone
+## Cart Project/Scandiweb test assignment
 
 This project is entry React developer test for Scandiweb. The project is a online shoping cart with categories. 
 
