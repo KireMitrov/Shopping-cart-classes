@@ -27,9 +27,9 @@ class Category extends React.Component {
                         return <div>
                             {data.categories.map((category) => {
                                 if (category.name.toLowerCase() === categoryName.toLowerCase())
-                                    return <div className="products">
+                                    return <div className="products" key={category.name}>
                                         {category.products.map((product, index) => (
-                                            <div className="product-card" key={product.name}>
+                                            <div className="product-card" key={index}>
                                                 <ProductCard product={product}></ProductCard>
                                             </div>
                                         ))}

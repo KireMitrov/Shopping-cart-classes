@@ -80,7 +80,7 @@ class ProductPage extends React.Component {
                             onClick={() => {
                                 this.setState({imageUrl: url});
                             }}
-                            key={index}></img>
+                            key={index} alt={url}></img>
                     ))}
                 </div>
             </div>)
