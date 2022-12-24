@@ -11,10 +11,10 @@ class Category extends React.Component {
 
     render() {
 
-        const { categoryName } = this.context
+        const { categoryName, cartIsOpen, setCartIsOpen  } = this.context
 
         return (
-            <div>
+            <div className={cartIsOpen ? "openCartOverlay" : ""} onClick={() => setCartIsOpen(!cartIsOpen)}>
                 <div className="title-position" >
                     <h1 className="title">{categoryName}</h1>
                 </div>
