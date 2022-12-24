@@ -68,6 +68,7 @@
   .cart-img {
     width: 200px;
     height: 288px;
+    object-fit: contain;
   }
   
   .cart-minus-plus-squares {

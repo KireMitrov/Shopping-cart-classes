@@ -96,6 +96,7 @@
   .cart-overlay img {
     width: 121px;
     height: 190px;
+    object-fit: contain;
   }
   
   .cart-overlay-remove-btn {
