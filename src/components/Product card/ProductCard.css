@@ -16,6 +16,7 @@
     top: 16px;
     left: 16px;
     margin: 16px 16px 0 16px;
+    object-fit: contain;
   }
   
   .img-out-of-stock {
