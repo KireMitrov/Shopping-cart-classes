@@ -36,14 +36,14 @@ class AppProvider extends React.Component {
     addToCart = (product) => {
 
         const addedItem = this.state.cartItems.find((item) => item.name === product.name && item.quantity === product.quantity && JSON.stringify(item.addedAttributes) === JSON.stringify(product.addedAttributes));
-
+        const productToAdd = {...product}
 
         if (addedItem) {
             this.setState({ cartItems: [...this.state.cartItems] });
             return
         }
 
-        this.setState({ cartItems: [...this.state.cartItems, product] })
+        this.setState({ cartItems: [...this.state.cartItems, productToAdd] })
         this.setState({ totalItems: this.state.totalItems + 1 })
 
 

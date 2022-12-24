@@ -1,7 +1,7 @@
 import React from "react";
 import AppContext from "../../context/AppContext";
 import "./ProductPage.css"
-
+import parse from 'html-react-parser';
 
 class ProductPage extends React.Component {
 
@@ -27,7 +27,7 @@ class ProductPage extends React.Component {
     render() {
 
         const { product, currency, currencyToAmount, addToCart, setProduct } = this.context;
-        console.log(this.props)
+        
         return (
             <div className="product-container">
                 <div className="product">
@@ -67,12 +67,12 @@ class ProductPage extends React.Component {
                     </div>
                     <div>
                         <div className="attributes-text">PRICE:</div>
-                        <div className="product-description-price">{currency} {product.prices[currencyToAmount(currency)].amount}</div>
+                        <div className="product-description-price">{currency}{product.prices[currencyToAmount(currency)].amount}</div>
                     </div>
                     <button
                         onClick={() => addToCart(product)}
                     >ADD TO CART</button>
-                    <div className="product-description-text" dangerouslySetInnerHTML={{ __html: product.description }} />
+                    <div className="product-description-text">{parse(`${product.description}`)}</div>
                 </div>
                 <div className="product-images">
                     {product.gallery.map((url, index) => (

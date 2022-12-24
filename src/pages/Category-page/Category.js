@@ -23,7 +23,7 @@ class Category extends React.Component {
                         if (loading) return null;
                         if (error) return console.log(error);
                         if (data.categories === undefined) return null;
-                        console.log(data.categories)
+
                         return <div>
                             {data.categories.map((category) => {
                                 if (category.name.toLowerCase() === categoryName.toLowerCase())

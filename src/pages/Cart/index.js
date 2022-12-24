@@ -23,7 +23,7 @@ class Cart extends React.Component {
                 </div>
                 <div className="cart-line"></div>
                 {cartItems.map((item, index) => (
-                    <div className="cart-item-container">
+                    <div className="cart-item-container" key={index}>
                         <div className="cart-attributes">
                             <div className="cart-brand-title-price">
                                 <div className="product-brand">{item.brand}</div>
