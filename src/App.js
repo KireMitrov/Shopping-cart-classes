@@ -22,7 +22,7 @@ class App extends React.Component {
         <Routes>
           <Route path=":categoryName" element={<Category></Category>}></Route>
           <Route path="/" element={<Category></Category>}></Route>
-          <Route path=":categoryName/:product" element={<ProductPage></ProductPage>}></Route>
+          <Route path="/product/:id" element={<ProductPage></ProductPage>}></Route>
           <Route path="cart" element={<Cart></Cart>}></Route>
           <Route path="*" element={<Navigate to="/" replace={true} />}></Route>
         </Routes>

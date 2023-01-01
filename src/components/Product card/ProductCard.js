@@ -23,7 +23,7 @@ class ProductCard extends React.Component {
                 onMouseEnter={() => this.setState({ isHovered: true })}
                 onMouseLeave={() => this.setState({ isHovered: false })}
             >
-                <Link to={this.props.product.name} onClick={() => setProduct({ ...this.props.product, addedAttributes: attributesArray, quantity: 1 })}>
+                <Link to={`/product/${this.props.product.id}`} onClick={() => setProduct({ ...this.props.product, addedAttributes: attributesArray, quantity: 1 })}>
                     {this.props.product.inStock ? null : <div className="out-of-stock-text">OUT OF STOCK</div>}
                     <img src={this.props.product.gallery[0]} className="product-card-img" ></img>
                     <div className="content">

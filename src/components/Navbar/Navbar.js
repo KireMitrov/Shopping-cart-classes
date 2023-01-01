@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom";
 import AppContext from "../../context/AppContext";
-import { PRODUCTS_QUERY, CURRENCY_QUERY } from "../../queries/queries";
+import { CURRENCY_QUERY, CATEGORIES_QUERY } from "../../queries/queries";
 import { Query } from "@apollo/client/react/components";
 import CartOverlay from "../Cart Overlay/CartOverlay";
 import "./Navbar.css"
@@ -49,7 +49,7 @@ class Navbar extends React.Component {
                 </defs>
             </svg>
 
-            <Query query={PRODUCTS_QUERY}>
+            <Query query={CATEGORIES_QUERY}>
                 {({ loading, error, data }) => {
                     if (loading) return null;
                     if (error) return console.log(error);
@@ -58,7 +58,7 @@ class Navbar extends React.Component {
                     return (<div className="navigation">
                         {data.categories.map((category) => (
                             <Link to={category.name} key={category.name} onClick={() => setCategoryName(category.name)}>
-                                <div  key={category.name} className={`navigation-element ${category.name === categoryName ? "tab-active" : ""}`}>
+                                <div key={category.name} className={`navigation-element ${category.name === categoryName ? "tab-active" : ""}`}>
                                     <p className={`label ${category.name === categoryName ? "label-active" : ""}`}>{category.name}</p>
                                 </div>
                             </Link>
