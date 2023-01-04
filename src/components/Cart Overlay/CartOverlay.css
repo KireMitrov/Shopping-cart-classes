@@ -1,37 +1,56 @@
 .cart-overlay {
-  position: absolute;
+  position: relative;
   width: 325px;
   height: 677px;
   left: 1043px;
   top: 78px;
   background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 32px 16px;
   gap: 32px;
   z-index: 10;
 }
 
 .cart-overlay-products-container {
+  position: absolute;
+  top: 90px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   padding: 0px;
   gap: 40px;
   width: 300px;
+  max-height: 420px;
+  overflow: scroll;
   background-color: #fff;
 }
 
 .cart-overlay-item-container {
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+  gap: 8px;
   justify-content: space-between;
 }
 
 .cart-overlay-items-left {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+  gap: 4px;
+  width: 164px;
+}
+
+.items-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-self: stretch;
 }
 
 .cart-overlay-text {
@@ -48,8 +67,8 @@
 }
 
 .cart-overlay-attributes-rectangle {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   border: 1px solid #1D1F22;
   display: flex;
   align-items: center;
@@ -85,8 +104,14 @@
 
 .cart-overlay-items-right {
   display: flex;
-  flex-direction: row;
-  gap: 8px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  gap: 32px;
+  width: 24px;
+  min-height: 190px;
+  align-self: stretch;
 }
 
 .cart-overlay-item-quantity {
@@ -115,7 +140,9 @@
 .cart-overlay-total {
   display: flex;
   justify-content: space-between;
-  width: 293px;
+  width: 289px;
+  position: absolute;
+  top: 542px;
 }
 
 .cart-overlay-total-text {
@@ -129,6 +156,8 @@
 }
 
 .cart-overlay-btns {
+  position: absolute;
+  top: 602px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
