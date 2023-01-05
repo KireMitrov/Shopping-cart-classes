@@ -6,6 +6,7 @@
   top: 160px;
   display: flex;
   align-items: center;
+  
 }
 
 .title {
@@ -34,7 +35,7 @@
   flex-direction: row;
   position: relative;
   top: 270px;
-  margin: 0 101px;
+  margin: 0 56px;
   flex-wrap: wrap;
   justify-content: left;
   row-gap: 103px;

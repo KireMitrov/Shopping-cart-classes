@@ -15,7 +15,7 @@ class ProductCard extends React.Component {
 
     render() {
 
-        const { currency, setProduct, addToCart, currencyToAmount } = this.context
+        const { currency, addToCart, currencyToAmount } = this.context
         const attributesArray = this.props.product.attributes.map((item) => ({ name: item.name, defaultValue: item.items[0].value }));
 
         return (
@@ -23,7 +23,7 @@ class ProductCard extends React.Component {
                 onMouseEnter={() => this.setState({ isHovered: true })}
                 onMouseLeave={() => this.setState({ isHovered: false })}
             >
-                <Link to={`/product/${this.props.product.id}`} onClick={() => setProduct({ ...this.props.product, addedAttributes: attributesArray, quantity: 1 })}>
+                <Link to={`/product/${this.props.product.id}`}>
                     {this.props.product.inStock ? null : <div className="out-of-stock-text">OUT OF STOCK</div>}
                     <img src={this.props.product.gallery[0]} className="product-card-img" ></img>
                     <div className="content">

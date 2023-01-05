@@ -15,30 +15,27 @@ class ProductPage extends React.Component {
         this.state = {
             imageUrl: "",
             itemId: window.location.pathname.split('/')[2],
-            product: {},
+            product: null,
         }
 
         this.changeAttribute = this.changeAttribute.bind(this)
     }
 
 
-    changeAttribute(product, attribute, value, setProduct) {
+    changeAttribute(product, attribute, value ) {
         let attributeToChange = product.addedAttributes.findIndex((att) => att.name === attribute);
         product.addedAttributes[attributeToChange]["defaultValue"] = value;
-        console.log(product)
+        this.setState({product: product})
     }
 
-    componentDidMount() {
-        console.log()
-    }
 
     render() {
 
-        const { currency, currencyToAmount, addToCart, setProduct } = this.context;
-        // let productid = product.id
+        const { currency, currencyToAmount, addToCart } = this.context;
+
 
         return (
-            // <div className="product-container">
+            
             <Query query={PRODUCT_BY_ID} variables={{ productid: this.state.itemId }}>
                 {({ loading, error, data }) => {
                     if (loading) return null;
@@ -46,9 +43,7 @@ class ProductPage extends React.Component {
                     if (data === undefined) return null;
                     if (data) {
                         const attributesArray = data.product.attributes.map((item) => ({ name: item.name, defaultValue: item.items[0].value }));
-                        const product = { ...data.product, addedAttributes: attributesArray, quantity: 1 };
-                        // this.setState({product: product})
-                        // setProduct(product)
+                        const product = this.state.product ? this.state.product : { ...data.product, addedAttributes: attributesArray, quantity: 1 };
 
 
                         return (
@@ -68,7 +63,7 @@ class ProductPage extends React.Component {
                                                         {attribute.items.map((value) => (
                                                             <div className={`attributes-rectangle ${product.addedAttributes[index].defaultValue === value.value ? "atributes-selected" : ""}`}
                                                                 key={value.value}
-                                                                onClick={() => this.changeAttribute(product, attribute.name, value.value, setProduct)}
+                                                                onClick={() => this.changeAttribute(product, attribute.name, value.value)}
                                                             >{value.value}</div>
                                                         ))}
                                                     </div>
@@ -80,7 +75,7 @@ class ProductPage extends React.Component {
                                                         <div className={`attributes-rectangle-color ${product.addedAttributes[index].defaultValue === value.value ? "cart-attributes-color-selected" : ""}`}
                                                             style={{ backgroundColor: `${value.value}` }}
                                                             key={value.value}
-                                                            onClick={() => this.changeAttribute(product, attribute.name, value.value, setProduct)}>
+                                                            onClick={() => this.changeAttribute(product, attribute.name, value.value )}>
                                                         </div>))}
                                                 </div>
                                             </div>
@@ -90,7 +85,7 @@ class ProductPage extends React.Component {
                                         <div className="attributes-text">PRICE:</div>
                                         <div className="product-description-price">{currency}{product.prices[currencyToAmount(currency)].amount}</div>
                                     </div>
-                                    <button onClick={() => addToCart(this.state.product)}>ADD TO CART</button>
+                                    <button onClick={() => addToCart(product)} disabled={!product.inStock}>ADD TO CART</button>
                                     <div className="product-description-text">{parse(`${product.description}`)}</div>
                                 </div>
                                 <div className="product-images">

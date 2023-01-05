@@ -8,7 +8,6 @@ class AppProvider extends React.Component {
         categoryName: "all",
         cartIsOpen: false,
         currency: "$",
-        product: "",
         cartItems: [],
         totalItems: 0,
         totalPrice: 0,
@@ -27,16 +26,11 @@ class AppProvider extends React.Component {
         this.setState({ currency: symbol })
     }
 
-    setProduct = (product) => {
-        this.setState({ product: product })
-    }
-
-
 
     addToCart = (product) => {
 
         const addedItem = this.state.cartItems.find((item) => item.name === product.name && item.quantity === product.quantity && JSON.stringify(item.addedAttributes) === JSON.stringify(product.addedAttributes));
-        const productToAdd = {...product}
+        const productToAdd = JSON.parse(JSON.stringify({...product}))
 
         if (addedItem) {
             this.setState({ cartItems: [...this.state.cartItems] });
@@ -119,8 +113,8 @@ class AppProvider extends React.Component {
 
     render() {
         const { children } = this.props
-        const { categoryName, cartIsOpen, currency, product, imageUrl, cartItems, totalItems, totalPrice } = this.state
-        const { setCategoryName, setCartIsOpen, setCurrency, setProduct, currencyToAmount, addToCart, removeFromCart, handleDecrement, handleIncrement, handleTextAttributeChange, setImageUrl, calculateTotal } = this
+        const { categoryName, cartIsOpen, currency, cartItems, totalItems, totalPrice } = this.state
+        const { setCategoryName, setCartIsOpen, setCurrency, currencyToAmount, addToCart, removeFromCart, handleDecrement, handleIncrement, handleTextAttributeChange, calculateTotal } = this
 
         return (
             <AppContext.Provider value={{
@@ -130,16 +124,12 @@ class AppProvider extends React.Component {
                 setCartIsOpen,
                 currency,
                 setCurrency,
-                product,
-                setProduct,
                 currencyToAmount,
                 addToCart,
                 removeFromCart,
                 handleDecrement,
                 handleIncrement,
                 handleTextAttributeChange,
-                setImageUrl,
-                imageUrl,
                 cartItems,
                 totalItems,
                 totalPrice, 
