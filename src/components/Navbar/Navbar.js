@@ -82,7 +82,7 @@ class Navbar extends React.Component {
 
                 </div>
             </div>
-            <div style={{ display: !cartIsOpen ? "none" : "block" }}>
+            <div className={cartIsOpen ? "cartOverlayOpen" : "cartOverlayClosed"}>
                 <CartOverlay></CartOverlay>
             </div>
             <Query query={CURRENCY_QUERY}>

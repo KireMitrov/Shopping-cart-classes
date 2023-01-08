@@ -18,8 +18,6 @@
   align-items: flex-start;
   padding: 0px;
   gap: 40px;
-  width: 300px;
-  max-height: 420px;
   overflow: scroll;
   background-color: #fff;
 }

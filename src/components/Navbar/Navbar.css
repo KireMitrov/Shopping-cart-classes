@@ -130,3 +130,11 @@
     cursor: pointer;
   }
   
+  .cartOverlayOpen{
+    display: block;
+    width: fit-content;
+  }
+
+  .cartOverlayClosed{
+    display: none;
+  }
