@@ -107,6 +107,10 @@
     border: none;
     cursor: pointer;
   }
+
+  .product-description button:disabled {
+    cursor: not-allowed;
+  }
   
   .product-description-text {
     margin-top: 32px;
