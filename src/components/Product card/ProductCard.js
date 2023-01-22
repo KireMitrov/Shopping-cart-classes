@@ -13,6 +13,7 @@ class ProductCard extends React.Component {
         }
     }
 
+
     render() {
 
         const { currency, addToCart, currencyToAmount } = this.context
@@ -30,7 +31,7 @@ class ProductCard extends React.Component {
                         {this.props.product.name}
                     </div>
                     <div className="product-price">
-                        {currency}{this.props.product.prices[currencyToAmount(currency)].amount.toFixed(2)}
+                        {currency}{this.props.product.prices[currencyToAmount(this.props.product.prices)].amount.toFixed(2)}
                     </div>
                 </Link>
                 <div>

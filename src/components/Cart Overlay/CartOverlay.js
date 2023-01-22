@@ -23,7 +23,7 @@ class CartOverlay extends React.Component {
                                     <div>
                                         <div className="cart-overlay-text">{item.brand}</div>
                                         <div className="cart-overlay-text">{item.name}</div>
-                                        <div className="cart-overlay-product-price" >{currency} {item.prices[currencyToAmount(currency)].amount.toFixed(2)}</div>
+                                        <div className="cart-overlay-product-price" >{currency} {item.prices[currencyToAmount(item.prices)].amount.toFixed(2)}</div>
                                     </div>
                                     <div>
                                         {item.attributes.map((attribute, index) => {

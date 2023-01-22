@@ -29,7 +29,7 @@ class Cart extends React.Component {
                             <div className="cart-brand-title-price">
                                 <div className="product-brand">{item.brand}</div>
                                 <div className="product-title">{item.name}</div>
-                                <div className="product-description-price" >{currency} {item.prices[currencyToAmount(currency)].amount}</div>
+                                <div className="product-description-price" >{currency} {item.prices[currencyToAmount(item.prices)].amount}</div>
                             </div>
                             <div>
                                 {item.attributes.map((attribute, index) => {

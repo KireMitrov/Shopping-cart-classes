@@ -10,7 +10,6 @@ class AppProvider extends React.Component {
         currency: "$",
         cartItems: [],
         totalItems: 0,
-        totalPrice: 0,
 
     }
 
@@ -84,19 +83,11 @@ class AppProvider extends React.Component {
     }
 
 
-    currencyToAmount = (currency) => {
-        switch (currency) {
-            case "$":
-                return 0;
-            case "£":
-                return 1;
-            case "A$":
-                return 2;
-            case "¥":
-                return 3;
-            case "₽":
-                return 4;
-        }
+    currencyToAmount = (currencyObject) => {
+        
+        let index = currencyObject.findIndex((i) => this.state.currency === i.currency.symbol);
+        return index;
+        
     }
 
     // Calculating total amount to pay
@@ -105,7 +96,7 @@ class AppProvider extends React.Component {
     calculateTotal = () => {
         let price = 0;
         this.state.cartItems.forEach((item, index) => {
-            price += item.quantity * item.prices[this.currencyToAmount(this.state.currency)].amount
+            price += item.quantity * item.prices[this.currencyToAmount(item.prices)].amount
         })
         return price.toFixed(2);
     }
@@ -131,8 +122,7 @@ class AppProvider extends React.Component {
                 handleIncrement,
                 handleTextAttributeChange,
                 cartItems,
-                totalItems,
-                totalPrice, 
+                totalItems, 
                 calculateTotal
             }}>{children}</AppContext.Provider>
         )

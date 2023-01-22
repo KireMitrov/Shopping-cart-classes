@@ -83,7 +83,7 @@ class ProductPage extends React.Component {
                                     </div>
                                     <div>
                                         <div className="attributes-text">PRICE:</div>
-                                        <div className="product-description-price">{currency}{product.prices[currencyToAmount(currency)].amount}</div>
+                                        <div className="product-description-price">{currency}{product.prices[currencyToAmount(product.prices)].amount.toFixed(2)}</div>
                                     </div>
                                     <button onClick={() => addToCart(product)} disabled={!product.inStock}>ADD TO CART</button>
                                     <div className="product-description-text">{parse(`${product.description}`)}</div>
